@@ -212,26 +212,12 @@ describe("\nImage tests\n-----------------------", () => {
     expect(dimOK, `- ${issues.join("\n- ")}`).toBe(true);
   });
 
-  test("<picture> element must contain three <source> elements with media and srcset attributes", () => {
-    const sources = docs[INDEX].querySelectorAll("picture > source");
-    expect(sources.length).toBeGreaterThanOrEqual(3);
-    sources.forEach(source => {
-      expect(source.getAttribute("media")).not.toBeNull();
-      expect(source.getAttribute("srcset")).not.toBeNull();
-    });
-  });
-
   test("contact page loads an SVG file with <img>", () =>
     expect(docs[CONTACT].querySelector("img[src$='.svg']")).not.toBeNull());
 });
 
 describe("\nMain index.html\n-----------------------", () => {
-  test("main index.html must contain a <picture>, one <main>, at least two <article>, an <aside>, and a <footer>", () => {
-    expect(
-      docs[INDEX].querySelector("picture"),
-      "<picture> not found"
-    ).not.toBeNull();
-
+  test("main index.html must contain one <main>, at least two <article>, an <aside>, and a <footer>", () => {
     expect(
       docs[INDEX].querySelector("main"),
       "<main> not found"
