@@ -151,6 +151,11 @@ img[srcset] {
   height: 100%;
 }
 
+/* because frameborder attribute of iframe is deprecated */
+iframe {
+  border: 0;
+}
+
 @media (min-aspect-ratio: 16/9) {
   .video-foreground {
     height: 300%;
