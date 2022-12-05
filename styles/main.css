@@ -370,7 +370,7 @@ header ul a {
 .panel {
   display: flex;
   flex-direction: column;
-  background: #fff8;
+  background: #fffa;
   color: #000;
 }
 
