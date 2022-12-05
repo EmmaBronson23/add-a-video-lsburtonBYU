@@ -120,6 +120,50 @@ img[srcset] {
   margin: 2rem auto;
 }
 
+/* fixed video background styles w/ media queries */
+/* video  */
+
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 300%;
+    left: -100%;
+  }
+}
+
 /* general use styles */
 
 /* used to hide section headings to visual users but not for screen readers */
@@ -326,14 +370,16 @@ header ul a {
 .panel {
   display: flex;
   flex-direction: column;
+  background: #fff8;
+  color: #000;
 }
 
 .panel .image-wrapper {
   order: -1;
 }
 
-.panel h2 {
-  margin-top: var(--gap);
+.panel .text-wrapper {
+  padding: 1rem 0 1rem 1rem;
 }
 
 /* cards */
@@ -607,7 +653,7 @@ input[type="checkbox"]:checked::after {
 
   /* extra CSS for fullscreen class */
   .fullscreen {
-    min-height: 100vh;
+    min-height: 180vh;
     display: flex;
     align-items: center;
     font-size: 1.2rem;
