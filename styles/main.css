@@ -184,7 +184,7 @@ img[srcset] {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  padding-top: 25vh;
+  padding-top: 2rem;
 }
 
 .hero h1,
@@ -544,9 +544,13 @@ input[type="checkbox"]:checked::after {
     margin: var(--gap) 0;
   }
 
-  picture img {
+  .hero video {
     height: 100vh;
     object-fit: cover;
+  }
+
+  .hero .text-content {
+    padding-top: 20vh;
   }
 
   .cards {
