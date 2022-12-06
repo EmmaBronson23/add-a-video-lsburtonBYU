@@ -506,3 +506,66 @@ describe("\nContact page specific tests\n-----------------------", () => {
     );
   });
 });
+
+describe("\nvideo specific tests\n-----------------------", () => {
+  test("video found", () => {
+    let video = [];
+    docs.forEach((doc, index) => {
+      if (doc.querySelector("video")) {
+        video.push({ index: index, type: "video" });
+      }
+
+      if (doc.querySelector("iframe")) {
+        video.push({ index: index, type: "iframe" });
+      }
+    });
+    if (video.length > 0) {
+      video.forEach(desc => {
+        if (desc.type === "video") {
+          const sources = docs[desc.index].querySelectorAll("video source");
+
+          expect(
+            sources.length,
+            "no video <source> elements found"
+          ).toBeGreaterThanOrEqual(1);
+
+          let webm = false;
+          let mp4 = false;
+
+          sources.forEach(source => {
+            if (source.getAttribute("type") === "video/webm") {
+              webm = true;
+            } else if (source.getAttribute("type") === "video/mp4") {
+              mp4 = true;
+            }
+          });
+
+          expect(
+            webm && mp4,
+            `video does not have source${
+              !webm && !mp4 ? "s" : ""
+            } with attribute ${!webm ? 'type="video/webm"' : ""}${
+              !webm && !mp4 ? " and " : ""
+            }${!mp4 ? 'type="video/mp4"' : ""}`
+          ).toBe(true);
+        } else if (desc.type === "iframe") {
+          const src = docs[desc.index]
+            .querySelector("iframe")
+            .getAttribute("src");
+
+          expect(src, "iframe src attribute not set").not.toBeNull();
+        } else {
+          expect(
+            false,
+            "something has gone horribly wrong and I don't know what to do"
+          ).toBe(true);
+        }
+      });
+    } else {
+      expect(
+        video.length,
+        "no <video> or <iframe> found"
+      ).toBeGreaterThanOrEqual(1);
+    }
+  });
+});
