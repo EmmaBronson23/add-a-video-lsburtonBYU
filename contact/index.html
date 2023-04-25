@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- <link rel="stylesheet" href="../styles/normalize.css"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -32,15 +31,17 @@
       </div>
       <ul>
         <li><a href="../">Home</a></li>
-        <li><a href="../about/">About</a></li>
+        <li><a href="../about/">Resume</a></li>
         <li><a>Contact</a></li>
       </ul>
     </nav>
   </header>
-  <h1>Contact</h1>
+  <h1>Contact Card</h1>
+  <h2>Please fill out your information below</h2>
   <main>
     <div class="image-wrapper">
-      <img src="../images/squirrel.svg" alt="a line drawing of a squirrel">
+      <img src="../images/oceanheroimage.jpg" alt="none"
+      height="600px" width="600px">
     </div>
     <form>
       <label for="name">Name</label>
@@ -49,42 +50,22 @@
       <input type="email" id="email" name="email" required>
       <div class="fieldset-wrapper">
         <fieldset>
-          <legend>Select your favorite squirrel color</legend>
+          <legend>Select your favorite social media platform</legend>
 
           <input type="radio" id="black" name="color" value="black">
-          <label for="black">Black</label>
+          <label for="black">Instagram</label>
 
           <input type="radio" id="brown" name="color" value="brown">
-          <label for="brown">Brown</label>
+          <label for="brown">Snapchat</label>
 
           <input type="radio" id="red" name="color" value="red">
-          <label for="red">Red</label>
+          <label for="red">Facebook</label>
 
           <input type="radio" id="white" name="color" value="white">
-          <label for="white">White</label>
-
-          <input type="radio" id="green" name="color">
-          <label for="green">Emerald green</label>
+          <label for="white">LinkedIN</label>
         </fieldset>
       </div>
-      <div class="fieldset-wrapper">
-        <fieldset>
-          <legend>Choose super powers you wish squirrels had</legend>
-
-          <input type="checkbox" id="fangs" name="power" value="fangs">
-          <label for="fangs">Retractable steel fangs</label>
-
-          <input type="checkbox" id="flight" name="power" value="flight">
-          <label for="flight">Supersonic flight</label>
-
-          <input type="checkbox" id="martial-arts" name="power" value="martial-arts">
-          <label for="martial-arts">Martial arts master</label>
-
-          <input type="checkbox" id="telekinesis" name="power" value="telekinesis">
-          <label for="telekinesis">Telekinesis</label>
-        </fieldset>
-      </div>
-      <label for="haiku">Compose a squirrel haiku</label>
+      <label for="haiku">Compose a haiku about yourself</label>
       <textarea id="haiku" name="haiku" rows="3" placeholder="Use a 5,7,5 syllable pattern"></textarea>
       <button>Send</button>
     </form>

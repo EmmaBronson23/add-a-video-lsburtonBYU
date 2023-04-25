@@ -1,7 +1,7 @@
 :root {
-  --color-accent: #b1c252;
-  --color-accent-dark: #527a27;
-  --color-accent-light: #e9eda5;
+  --color-accent: #5ebdbd;
+  --color-accent-dark: #5ebdbd;
+  --color-accent-light: #c2f6ea;
   --color-primary: #4b6b35;
   --color-headings: #18200d;
   --color-text: #616161;
@@ -9,8 +9,8 @@
   --color-svg: black;
   --color-svg-hover: var(--color-primary);
   --color-svg-close: #fff;
-  --gutter: 1rem; /* vertical distance from screen edge */
-  --gap: 3rem; /* horizontal distance between sections */
+  --gutter: 1rem; 
+  --gap: 4rem; 
   --big-gap: 8rem;
   --radio-width: 24px;
   --radio-border-width: 2px;
@@ -30,7 +30,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Urbanist", sans-serif;
-  color: var(--color-text);
+  color: var(black);
   line-height: 1.5;
 }
 
@@ -39,7 +39,7 @@ h2,
 h3,
 h4 {
   font-family: "Josefin Sans", sans-serif;
-  color: var(--color-headings);
+  color: var(black);
   line-height: 1.2;
   font-weight: 400;
   max-width: 40rem;
@@ -64,28 +64,27 @@ p {
 
 main {
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 0 var;
   max-width: 70rem;
 }
 
 article {
-  margin-bottom: var(--big-gap);
+  margin-bottom: var;
 }
 
 aside,
 footer {
-  padding: 0 var(--gutter);
+  padding: 0 var;
 }
 
 aside {
-  margin-bottom: var(--big-gap);
+  margin-bottom: var(3rem);
 }
 
 footer {
   align-self: stretch;
-  background-color: var(--color-primary);
+  background-color: var(black);
   color: #fff;
-  padding: 2rem var(--gutter);
   font-size: 1.5rem;
 }
 
@@ -101,7 +100,7 @@ picture img {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(white);
   text-decoration: none;
 }
 
@@ -110,7 +109,7 @@ a:not([href]) {
 }
 
 a[href]:hover {
-  color: var(--color-primary);
+  color: var(white);
   cursor: pointer;
 }
 
@@ -120,8 +119,6 @@ img[srcset] {
   margin: 2rem auto;
 }
 
-/* fixed video background styles w/ media queries */
-/* video  */
 
 .video-foreground,
 .video-background iframe {
@@ -133,7 +130,7 @@ img[srcset] {
 }
 
 .video-background {
-  background: #000;
+  background: white;
   position: fixed;
   top: 0;
   right: 0;
@@ -151,7 +148,7 @@ img[srcset] {
   height: 100%;
 }
 
-/* because frameborder attribute of iframe is deprecated */
+
 iframe {
   border: 0;
 }
@@ -169,9 +166,6 @@ iframe {
   }
 }
 
-/* general use styles */
-
-/* used to hide section headings to visual users but not for screen readers */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -208,7 +202,6 @@ iframe {
   color: white;
 }
 
-/* hero styles */
 .hero {
   position: relative;
   align-self: stretch;
